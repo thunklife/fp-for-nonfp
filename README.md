@@ -1,2 +1,3 @@
-# fp-for-nonfp
-Functional Programming in Non-functional Languages
+# Functional Programming in Non-functional Languages
+
+Slides for talk on FP.
