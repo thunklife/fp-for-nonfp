@@ -1,0 +1,14 @@
+What is FP
+Pure functions
+Functions as values
+Currying
+Recursion
+	Map, Filter, Reduce
+Immutability
+Separation of Data and Functions
+Whole Values?
+Simple Data Types
+Side Effects
+	
+Re-watch boundaries talk
+Re-read - Why FP Matters
