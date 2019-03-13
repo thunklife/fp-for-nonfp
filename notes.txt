@@ -9,6 +9,6 @@ Separation of Data and Functions
 Whole Values?
 Simple Data Types
 Side Effects
-	
 Re-watch boundaries talk
 Re-read - Why FP Matters
+FP for OOP - https://www.youtube.com/watch?v=GpXsQ-NIKXY
