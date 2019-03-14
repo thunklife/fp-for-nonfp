@@ -1,14 +1,22 @@
 What is FP
-Pure functions
-Functions as values
-Currying
+Functions
+	Pure
+	First-class
+	Higher Order
+	Currying
 Recursion
-	Map, Filter, Reduce
+	Map
+	Filter
+	Reduce
 Immutability
 Separation of Data and Functions
-Whole Values?
-Simple Data Types
-Side Effects
+Boundaries
+	Side Effects
+Dependency Inversion
+	Usually implemented with Dependency Injection
+	https://twitter.com/importantshock/status/1085740688283746304
+	https://twitter.com/paulcbetts/status/1085810918582177792
+	https://twitter.com/zemnmez/status/1085818038916730880
 Re-watch boundaries talk
 Re-read - Why FP Matters
 FP for OOP - https://www.youtube.com/watch?v=GpXsQ-NIKXY
