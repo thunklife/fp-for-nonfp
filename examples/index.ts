@@ -52,6 +52,14 @@ export function reduce<A, B>(f: ReduceFunc<A, B>, a: A, xs: B[]): A {
   return xs.reduce(f, a);
 }
 
+export function cReduce<A, B>(f: ReduceFunc<A,B>) {
+  return function (a: A) {
+    return function(xs: B[]) {
+      return xs.reduce(f,a)
+    }
+  }
+}
+
 export function compose<A, B, C>(g: Func<B, C>, f: Func<A, B>): Func<A, C> {
   return (a: A) => {
     return g(f(a));
@@ -62,8 +70,18 @@ export function not(a: Boolean): Boolean {
   return !a;
 }
 
+export function and(a: boolean, b: boolean): boolean {
+  return a && b;
+}
+
+export function or(a: boolean, b: boolean): boolean {
+  return a || b;
+}
+ 
 export const odd = compose(not, even);
 export const add10Sub5 = compose(sub5, add10);
+export const all = cReduce(and)(true);
+export const any = cReduce(or)(false);
 
 add10Sub5(10) //=> 15
 map(add10, [1, 2, 3]) //=> [11, 12, 13]
