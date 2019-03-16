@@ -1,26 +1,28 @@
-export const add = (a: number, b: number): number => {
+export function add(a: number, b: number): number {
   return a + b;
 }
 
-export const add10 = (a: number): number => {
+export function add10 (a: number): number {
   return a + 10;
 }
 
-export const sub5 = (a: number): number => {
+export function sub5 (a: number): number {
   return a - 5;
 }
 
-export const even = (a: number): Boolean => {
+export function even (a: number): Boolean {
   return a % 2 === 0;
 }
 
-export const impureAdd = (a: number, b: number): number => {
+export function impureAdd (a: number, b: number): number {
   console.log("Launching missles");
   return a + b;
 }
 
-export const curriedAdd = (a: number) => (b: number): number => {
-  return a + b;
+function curriedAdd(a: number): Func<number, number> {
+  return function (b: number): number {
+    return a + b;
+  }
 }
 
 export const curriedAdd10 = curriedAdd(10);
