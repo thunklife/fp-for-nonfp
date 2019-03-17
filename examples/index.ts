@@ -2,6 +2,17 @@ export function add(a: number, b: number): number {
   return a + b;
 }
 
+export function recAdd(a: number, b: number): number {
+  if (a === 0) return b;
+  return recAdd(--a, ++b);
+}
+
+export function recMap<A, B>(f: Func<A, B>, xs: A[]): B[] {
+  if (xs.length === 0) return [];
+  const x = xs.pop();
+  return recMap(f, xs).concat(f(x));
+}
+
 export function add10 (a: number): number {
   return a + 10;
 }
