@@ -1,3 +1,9 @@
+type Func<A, B> = (a: A) => B;
+
+type Predicate<A> = (a: A) => Boolean;
+
+type ReduceFunc<A, B> = (a: A, b: B) => A;
+
 export function add(a: number, b: number): number {
   return a + b;
 }
@@ -38,12 +44,6 @@ function curriedAdd(a: number): Func<number, number> {
 
 export const curriedAdd10 = curriedAdd(10);
 
-type Func<A, B> = (a: A) => B;
-
-type Predicate<A> = (a: A) => Boolean;
-
-type ReduceFunc<A, B> = (a: A, b: B) => A;
-
 export function map<A, B>(f: Func<A, B>, xs: A[]): B[] {
   return xs.map(f);
 }
@@ -72,7 +72,7 @@ export function cReduce<A, B>(f: ReduceFunc<A,B>) {
 }
 
 export function compose<A, B, C>(g: Func<B, C>, f: Func<A, B>): Func<A, C> {
-  return (a: A) => {
+  return function(a: A) {
     return g(f(a));
   }
 }
