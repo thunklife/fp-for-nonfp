@@ -48,15 +48,19 @@ export function map<A, B>(f: Func<A, B>, xs: A[]): B[] {
   return xs.map(f);
 }
 export function curriedMap<A, B>(f: Func<A, B>) {
-  return (xs: A[]) => xs.map(f);
+  return function (xs: A[]) {
+    xs.map(f);
+  }
 }
 
 export function filter<A>(f: Predicate<A>, xs: A[]): A[] {
   return xs.filter(f);
 }
 
-export function curriedFilter<A>(f: Predicate<A>) {
-  return (xs: A[]) => xs.filter(f);
+function curriedFilter<A>(f: Predicate<A>) {
+  return function (xs: A[]) {
+    return xs.filter(f);
+  }
 }
 
 export function reduce<A, B>(f: ReduceFunc<A, B>, a: A, xs: B[]): A {
