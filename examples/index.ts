@@ -19,19 +19,19 @@ export function recMap<A, B>(f: Func<A, B>, xs: A[]): B[] {
   return recMap(f, xs).concat(f(x));
 }
 
-export function add10 (a: number): number {
+export function add10(a: number): number {
   return a + 10;
 }
 
-export function sub5 (a: number): number {
+export function sub5(a: number): number {
   return a - 5;
 }
 
-export function even (a: number): Boolean {
+export function even(a: number): Boolean {
   return a % 2 === 0;
 }
 
-export function impureAdd (a: number, b: number): number {
+export function impureAdd(a: number, b: number): number {
   console.log("Launching missles");
   return a + b;
 }
@@ -67,16 +67,16 @@ export function reduce<A, B>(f: ReduceFunc<A, B>, a: A, xs: B[]): A {
   return xs.reduce(f, a);
 }
 
-export function cReduce<A, B>(f: ReduceFunc<A,B>) {
+export function cReduce<A, B>(f: ReduceFunc<A, B>) {
   return function (a: A) {
-    return function(xs: B[]) {
-      return xs.reduce(f,a)
+    return function (xs: B[]) {
+      return xs.reduce(f, a)
     }
   }
 }
 
 export function compose<A, B, C>(g: Func<B, C>, f: Func<A, B>): Func<A, C> {
-  return function(a: A) {
+  return function (a: A) {
     return g(f(a));
   }
 }
@@ -92,7 +92,7 @@ export function and(a: boolean, b: boolean): boolean {
 export function or(a: boolean, b: boolean): boolean {
   return a || b;
 }
- 
+
 export const odd = compose(not, even);
 export const add10Sub5 = compose(sub5, add10);
 export const all = cReduce(and)(true);
